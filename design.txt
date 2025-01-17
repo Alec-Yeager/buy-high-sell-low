@@ -1,0 +1,18 @@
+classes:
+
+Strategy : contains logic for looking at the market.
+    Takes in the market and spits out an order if it's time.
+    Could possible be useful to have it take in multiple in the future.  
+DumbAss(Strategy) : most simple strat. 
+    Basically just rides waves for swing trading.
+        
+MarketData : contains the market in custom form.
+    use ynance or whatever the hell it was called to get things live.
+
+Applicator : applies a strategy to the market.
+    Should essentially handle giving the strat the market.
+    Gets out a a list of orders for the most recent candle.
+    The list can be empty if no good orders.
+    probably responsible for ensuring live application.
+
+BackTester : takes the applicator and gaslights it into thinking it's in 2008 forever.
